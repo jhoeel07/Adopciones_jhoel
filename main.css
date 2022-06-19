@@ -1,0 +1,417 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+
+    background-color: #000;
+
+}
+.padreSupremo{
+
+    display: grid;
+
+    grid-template-areas: 
+    "nav nav nav nav"
+    " aside header header header"
+    "aside main main main"
+    "aside main main main"
+    "footer footer footer footer";
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+
+/* ----------------PARTE DEL NAVEGADOR PRINCIPAL------------------------ */
+
+nav{
+
+    grid-area: nav;
+    margin-bottom: 2rem;
+}
+
+.ul_navegador {
+
+
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+   
+}
+
+.ul_navegador li{
+    list-style: none;
+}
+
+
+.ul_navegador li a{
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 2rem;
+}
+
+.ul_navegador li a:hover{
+
+     text-shadow: 0 5px 6px  floralwhite; 
+}
+
+
+/* ----------------FIN PARTE DEL NAVEGADOR PRINCIPAL------------------------ */
+
+
+
+
+/* ----------------PARTE DEL ASIDE------------------------ */
+aside{
+
+    grid-area: aside;
+
+    font-size: 2rem;
+    background: rgb(82,87,80);
+    background: linear-gradient(357deg, rgba(82,87,80,1) 20%, rgba(0,0,0,1) 44%);
+    
+
+}
+.ul_aside{
+    list-style: none;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.ul_aside a {
+    text-decoration: none;
+    color: bisque;
+
+    padding: 1rem;
+    border: rgb(255, 255, 255) solid 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.ul_aside a:hover {
+    font-size: 2.2rem;
+    border:solid greenyellow 5px;
+}
+
+aside img{
+    width: 100%;
+    height: 50%;
+
+    object-fit: cover;
+    
+
+}
+
+
+
+/* ----------------FIN PARTE DEL ASIDE------------------------ */
+
+
+
+
+/* ----------------PARTE DEL HEADER------------------------ */
+header{
+
+    grid-area: header;
+    text-align: center;
+    margin-bottom: 2rem;
+    
+}
+
+header div h1{
+
+    font-size: 3rem;
+
+    
+    color: bisque;
+    
+
+}
+
+
+/* ----------------PARTE FIN DEL HEADER------------------------ */
+
+
+
+
+
+
+/* ----------------PARTE DEL MAIN------------------------ */
+
+main{
+
+    grid-area: main;
+ width: 100%;
+ background-color: bisque;
+
+    
+}
+
+
+
+.Segunda_portada {
+
+    width: 100%;
+    height: 25%;
+   
+
+
+}
+.Segunda_portada img{
+
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+
+
+}
+
+.Segunda_portada p {
+
+   font-size: 2rem;
+   text-align: center;
+
+}
+
+
+.tabla_foto_perros{
+    margin-top: 5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+
+.carta{
+
+    position: relative;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    transform-style: preserve-3d;      
+    display: flex;
+    flex-wrap: wrap;         
+
+}
+
+.carta .face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /*determina si la cara posterior de un elemento es visible de frente al usuario 
+                                hidden: significa que la cara posterior no es visible, ocultando la cara frontal
+                                visible: significa que la cara posterior es visible, permitiendo que la cara frontal se muestre invertida  */
+    overflow: hidden;
+    transition: .5s ease-in-out;
+
+}
+
+.face-front{
+
+    transform:  rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+
+}
+
+.carta .face-front img{
+
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   left: 0;
+
+
+}
+
+.face-front h2{
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+ 
+ }
+
+.face-back{
+
+    transform: perspective(600px) rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    
+}
+.cesar img{
+    margin: auto;
+    height: 150px;
+     width: 110px;
+}
+
+.carta:hover .face-back{
+    transform:perspective(600px) rotateY(360deg);
+}
+
+.carta:hover .face-front{
+    transform:perspective(600px) rotateY(180deg);
+}
+
+.carrusel{
+   
+
+    width: 40rem;
+    height: 55rem;
+    margin: 5rem auto auto auto;
+
+  
+  
+}
+.texto_carusel{
+
+    margin-top: 2rem;
+
+}
+
+.div_corrazon{
+
+   display: flex;
+   justify-content: center;
+}
+.corazon{
+
+    
+ 
+    animation-name: Movi-corazon;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+}
+
+@keyframes Movi-corazon{
+
+    10%{
+        
+      transform: scale(1.1); 
+        
+    }
+    20%{
+
+        transform: scale(1.2); 
+      
+    }
+    30%{
+
+        transform: scale(1.1); 
+     
+    }
+    40%{
+
+        transform: scale(1.2); 
+       
+     
+    }
+    50%{
+
+        transform: scale(1.1); 
+     
+    }
+
+}
+
+
+/*----- este es el MAIN DE LA PAGINA SOBRE NOSOTROS como padre y subdividir en grid areas --------------*/
+
+.main_sobreNostros{
+
+    display: grid;
+    grid-template-areas: 
+    "foto foto"
+    "datos mascotas";
+}
+
+
+.datos{
+    grid-area: datos;
+}
+
+.foto_jhoel{
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    grid-area: foto;
+}
+.foto_jhoel img{
+
+  width: 250px;
+  height:250px;
+  object-fit:cover ;
+    
+}
+
+.mascotas{
+
+    grid-area: mascotas;
+
+}
+
+
+/* ----------------FIN PARTE DEL MAIN------------------------ */
+
+
+
+
+
+
+
+/* ----------------PARTE DEL FOOTER------------------------ */
+footer{
+
+    grid-area: footer;
+
+    display: flex;
+
+    justify-content: space-around;
+  background-color: black;
+
+}
+
+.ul_footer{
+
+    list-style: none;
+
+}
+
+.ul_footer li a{
+
+    text-decoration: none;
+    color: aliceblue;
+}
+.ul_footer li a:hover{
+
+    color: rgb(255, 242, 0);
+}
+.titulos_column_footer{
+
+    color:antiquewhite
+}
+/* ---------------- FIN PARTE DEL FOOTER------------------------ */
+
+
+
+
+
+
+
